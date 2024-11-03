@@ -14,7 +14,7 @@ connection cx;
     public SignUp() {
        initComponents();
        setResizable(false);
-       this.setTitle("VIVAGEM - INICIAR SESIÓN");
+       this.setTitle("SMARTVAULT - INICIAR SESIÓN");
        cx = new connection();
         cx.conectar();
         ImageIcon icono = new ImageIcon(getClass().getResource("/Icon/logo.png"));

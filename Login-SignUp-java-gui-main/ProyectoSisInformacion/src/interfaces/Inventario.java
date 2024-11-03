@@ -16,7 +16,7 @@ public class Inventario extends javax.swing.JFrame {
     public Inventario() {
        initComponents();
        setResizable(false);
-       this.setTitle("VIVAGEM - INVENTARIO");
+       this.setTitle("SMARTVAULT - INVENTARIO");
        ImageIcon icono = new ImageIcon(getClass().getResource("/Icon/inventario.png"));
 
     // Verificar si la imagen se cargó correctamente

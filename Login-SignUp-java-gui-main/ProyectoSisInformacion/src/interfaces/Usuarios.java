@@ -16,7 +16,7 @@ public class Usuarios extends javax.swing.JFrame {
     public Usuarios() {
        initComponents();
        setResizable(false);
-       this.setTitle("VIVAGEM - USUARIOS");
+       this.setTitle("SMARTVAULT - USUARIOS");
        CEmpleados objetoEmpleados = new CEmpleados();
        objetoEmpleados.mostrarEmpleados(tablaEmpleados);
        campoIdEmpleado.setEnabled(false);

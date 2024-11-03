@@ -15,7 +15,7 @@ public class productos extends javax.swing.JFrame {
     public productos() {
        initComponents();
        setResizable(false);
-       this.setTitle("SmartVault - PRODUCTOS");
+       this.setTitle("SMARTVAULT - PRODUCTOS");
        CProductos objetoProductos = new CProductos();
        objetoProductos.mostrarProductos(tablaProductos);
        campoIdProducto.setEnabled(false);

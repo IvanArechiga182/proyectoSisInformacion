@@ -18,7 +18,7 @@ public class Venta extends javax.swing.JFrame {
     public Venta() {
        initComponents();
        setResizable(false);
-       this.setTitle("VIVAGEM - REALIZAR VENTA");
+       this.setTitle("SMARTVAULT - REALIZAR VENTA");
        CVentas objetoVentas = new CVentas();
        objetoVentas.mostrarProductos(tablaVentas);
        campoIdVenta.setEnabled(false);

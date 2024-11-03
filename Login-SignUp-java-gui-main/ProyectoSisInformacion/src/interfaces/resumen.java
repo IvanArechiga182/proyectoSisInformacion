@@ -12,7 +12,7 @@ public class resumen extends javax.swing.JFrame {
     public resumen() {
        initComponents();
        setResizable(false);
-       this.setTitle("VIVAGEM - RESUMEN VENTAS");
+       this.setTitle("SMARTVAULT - RESUMEN VENTAS");
        CResumenVentas objetoResumen = new CResumenVentas();
        objetoResumen.mostrarProductos(tablaResumenVentas);
        ImageIcon icono = new ImageIcon(getClass().getResource("/Icon/sheet.png"));
