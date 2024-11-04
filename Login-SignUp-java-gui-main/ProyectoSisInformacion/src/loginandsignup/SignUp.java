@@ -261,7 +261,7 @@ connection cx;
             JOptionPane.showMessageDialog(null, "Uno o mas campos estan incompletos, revisalos");
         } else {
             try {
-                String consulta = "insert into usuarios (nombre_usuario, email, contraseña) values('"+nombreUsuario+"','"+email+"','"+pass+"')";
+                String consulta = "insert into usuarios (nombre_usuario, email, contrasena) values('"+nombreUsuario+"','"+email+"','"+pass+"')";
                 CallableStatement cs = cx.conectar().prepareCall(consulta);
                 cs.execute();
                 JOptionPane.showMessageDialog(null, "Usuario creado correctamente");

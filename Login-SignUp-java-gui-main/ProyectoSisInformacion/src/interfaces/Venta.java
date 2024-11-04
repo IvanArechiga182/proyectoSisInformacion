@@ -1,14 +1,11 @@
 
 package interfaces;
 
-import datosGenerales.CProductos;
 import datosGenerales.CVentas;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import java.text.DecimalFormat;
 
 
 
@@ -53,17 +50,19 @@ public class Venta extends javax.swing.JFrame {
         // Obtener los valores de los campos
         String precioUnitarioStr = campoPrecioUnitario.getText();
         String cantidadVendidaStr = campoCantidadVendida.getText();
-
+        
         // Verificar si ambos campos tienen valores
         if (!precioUnitarioStr.isEmpty() && !cantidadVendidaStr.isEmpty()) {
             try {
+                DecimalFormat df = new DecimalFormat("#.00");
                 // Convertir las cadenas a números
                 double precioUnitario = Double.parseDouble(precioUnitarioStr);
+                
                 int cantidadVendida = Integer.parseInt(cantidadVendidaStr);
 
                 // Calcular el total
                 double total = precioUnitario * cantidadVendida;
-
+                total = Math.round(total * 100.0) / 100.0;
                 // Mostrar el total en el campo correspondiente
                 campoTotalVenta.setText(String.valueOf(total));
             } catch (NumberFormatException ex) {

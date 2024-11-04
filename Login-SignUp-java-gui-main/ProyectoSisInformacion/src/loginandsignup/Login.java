@@ -7,9 +7,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import interfaces.productos;
 import javax.swing.ImageIcon;
-
+import interfaces.resumen;
 
 
 public class Login extends javax.swing.JFrame {
@@ -244,12 +243,12 @@ public class Login extends javax.swing.JFrame {
          // TODO add your handling code here:
          String usuario= jTextField1.getText();
          String pass = String.valueOf(jPasswordField1.getPassword());
-         String query = "SELECT * FROM usuarios WHERE user='"+usuario+"' and password='"+pass+"'";
+         String query = "SELECT * FROM usuarios WHERE nombre_usuario='"+usuario+"' and contrasena='"+pass+"'";
          java.sql.Statement st = cx.conectar().createStatement();
          ResultSet rs = st.executeQuery(query);
          if(rs.next()){
              JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario);
-             productos interf1Frame = new productos();
+             resumen interf1Frame = new resumen();
              interf1Frame.setVisible(true);
              interf1Frame.pack();
              interf1Frame.setLocationRelativeTo(null); 

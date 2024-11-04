@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class CProductos {
     private DefaultTableModel modeloProductos;
     String nombreProducto;
-    int precio;
+    double precio;
     String estado;
     String categoria;
     int id;
@@ -41,11 +41,11 @@ public class CProductos {
         this.nombreProducto = nombreProducto;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -67,7 +67,7 @@ public class CProductos {
     
     public void insertarProducto(JTextField paramNombre, JTextField paramPrecio, JTextField paramEstado, JTextField paramCategoria ){
         setNombreProducto(paramNombre.getText());
-        setPrecio(Integer.parseInt(paramPrecio.getText()));
+        setPrecio(Double.parseDouble(paramPrecio.getText()));
         setEstado(paramEstado.getText());
         setCategoria(paramCategoria.getText());
         
@@ -78,7 +78,7 @@ public class CProductos {
             CallableStatement cs = objetoConexion.conectar().prepareCall(consulta);
           
             cs.setString(1,getNombreProducto());
-            cs.setInt(2, getPrecio());
+            cs.setDouble(2, getPrecio());
             cs.setString(3,getEstado());
             cs.setString(4,getCategoria());
             
@@ -128,7 +128,7 @@ public class CProductos {
              while(rs.next()){
                  datos[0] = String.valueOf(rs.getInt(1));
                  datos[1] = rs.getString(2);
-                 datos[2] = String.valueOf(rs.getInt(3));
+                 datos[2] = String.valueOf(rs.getDouble(3));
                  datos[3] = rs.getString(4);
                  datos[4] = rs.getString(5);
                  
@@ -164,7 +164,7 @@ public class CProductos {
         
         setId(Integer.parseInt(paramIdProducto.getText()));
         setNombreProducto(paramNombreProducto.getText());
-        setPrecio(Integer.parseInt(paramPrecio.getText()));
+        setPrecio(Double.parseDouble(paramPrecio.getText()));
         setEstado(paramEstado.getText());
         setCategoria(paramCategoria.getText());
         
@@ -176,7 +176,7 @@ public class CProductos {
             CallableStatement cs = objetoConexion.conectar().prepareCall(consulta);
             
             cs.setString(1, getNombreProducto());
-            cs.setInt(2, getPrecio());
+            cs.setDouble(2, getPrecio());
             cs.setString(3, getEstado());
             cs.setString(4, getCategoria());
             cs.setInt(5, getId());

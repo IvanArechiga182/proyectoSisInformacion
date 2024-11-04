@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class connection {
-    String bd="vivagem";
+    String bd="smartvault_database";
     String url="jdbc:mysql://localhost:3306/";
     String user= "root";
     String password="";

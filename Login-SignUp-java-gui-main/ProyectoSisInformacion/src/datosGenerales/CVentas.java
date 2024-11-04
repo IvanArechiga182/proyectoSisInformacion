@@ -15,8 +15,6 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class CVentas {
 
@@ -79,20 +77,13 @@ public class CVentas {
         this.total = total;
     }
 
-    
-
-  
-    
-    
     public void insertarVenta(JTextField paramNombre,JTextField paramCantidad, JTextField paramPrecio, JTextField paramTotal, JTextField paramFecha ){
         setNombre(paramNombre.getText());
         setCantidad(Integer.parseInt(paramCantidad.getText()));
-        setPrecio((float) Double.parseDouble(paramPrecio.getText()));
-        setTotal((float) Double.parseDouble(paramTotal.getText()));
+        setPrecio((double) Double.parseDouble(paramPrecio.getText()));
+        setTotal((double) Double.parseDouble(paramTotal.getText()));
         setFecha(paramFecha.getText());
-        
-        
-        
+       
         connection objetoConexion = new connection();
         
         String consulta = "insert into ventas_realizadas (nombre, cantidad, precio, total,fecha) values(?, ?, ?, ?, ?);";
