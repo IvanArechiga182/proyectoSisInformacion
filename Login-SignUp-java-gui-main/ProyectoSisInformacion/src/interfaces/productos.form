@@ -89,7 +89,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="82" max="32767" attributes="0"/>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="btnResumen" min="-2" pref="76" max="-2" attributes="0"/>
                           <Component id="btnVenta" alignment="1" min="-2" pref="76" max="-2" attributes="0"/>
@@ -131,7 +131,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Century Gothic" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="SMARTVAULT"/>
+                <Property name="text" type="java.lang.String" value="CapeKeeper"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnResumen">
