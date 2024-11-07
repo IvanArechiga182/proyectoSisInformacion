@@ -16,7 +16,7 @@ public class Usuarios extends javax.swing.JFrame {
     public Usuarios() {
        initComponents();
        setResizable(false);
-       this.setTitle("SMARTVAULT - USUARIOS");
+       this.setTitle("CAPKEEPER - USUARIOS");
        CEmpleados objetoEmpleados = new CEmpleados();
        objetoEmpleados.mostrarEmpleados(tablaEmpleados);
        campoIdEmpleado.setEnabled(false);
@@ -66,18 +66,18 @@ public class Usuarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign Up");
 
-        jPanel1.setBackground(new java.awt.Color(46, 139, 87));
+        jPanel1.setBackground(new java.awt.Color(0, 95, 115));
         jPanel1.setToolTipText("");
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        jPanel3.setBackground(new java.awt.Color(75, 75, 75));
+        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
         jPanel3.setAutoscrolls(true);
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jLabel5.setBackground(new java.awt.Color(245, 245, 245));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("SMARTVAULT");
+        jLabel5.setText("CAPEKEEPER");
 
         btnResumen.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnResumen.setText("Resumen");
@@ -134,7 +134,7 @@ public class Usuarios extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(82, Short.MAX_VALUE)
+                .addContainerGap(85, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)

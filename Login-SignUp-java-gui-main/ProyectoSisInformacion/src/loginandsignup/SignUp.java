@@ -4,7 +4,6 @@ package loginandsignup;
 import javax.swing.JTextField;
 import java.sql.CallableStatement;
 import javax.swing.JOptionPane;
-import datosGenerales.registrarUsuarios;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
@@ -14,7 +13,7 @@ connection cx;
     public SignUp() {
        initComponents();
        setResizable(false);
-       this.setTitle("SMARTVAULT - INICIAR SESIÓN");
+       this.setTitle("CAPEKEEPER  - INICIAR SESIÓN");
        cx = new connection();
         cx.conectar();
         ImageIcon icono = new ImageIcon(getClass().getResource("/Icon/logo.png"));
@@ -52,7 +51,8 @@ connection cx;
         btnRegistrarse = new javax.swing.JButton();
         btnIniciarSesion = new javax.swing.JButton();
         campoContrasena = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logo.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -123,7 +123,7 @@ connection cx;
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("¿Ya tienes una cuenta? Inicia sesión!");
 
-        btnRegistrarse.setBackground(new java.awt.Color(0, 51, 102));
+        btnRegistrarse.setBackground(new java.awt.Color(0, 95, 115));
         btnRegistrarse.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarse.setText("Registrarse");
@@ -134,7 +134,7 @@ connection cx;
             }
         });
 
-        btnIniciarSesion.setBackground(new java.awt.Color(0, 51, 102));
+        btnIniciarSesion.setBackground(new java.awt.Color(0, 95, 115));
         btnIniciarSesion.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("Iniciar sesión");
@@ -152,6 +152,10 @@ connection cx;
                 campoContrasenaActionPerformed(evt);
             }
         });
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel9.setText("CapeKeeper");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -182,11 +186,17 @@ connection cx;
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(130, 130, 130))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel5)
@@ -212,10 +222,9 @@ connection cx;
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 10, 400, 500);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/abarrotesLogo.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(410, -60, 440, 620);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logo.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(400, 50, 610, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -322,12 +331,13 @@ connection cx;
     private javax.swing.JTextField campoEmail;
     private javax.swing.JTextField campoNombreUsuario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

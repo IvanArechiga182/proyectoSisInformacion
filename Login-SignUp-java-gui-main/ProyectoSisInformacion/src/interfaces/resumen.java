@@ -12,7 +12,7 @@ public class resumen extends javax.swing.JFrame {
     public resumen() {
        initComponents();
        setResizable(false);
-       this.setTitle("SMARTVAULT - RESUMEN VENTAS");
+       this.setTitle("CAPKEEPER - RESUMEN VENTAS");
        CResumenVentas objetoResumen = new CResumenVentas();
        objetoResumen.mostrarProductos(tablaResumenVentas);
        ImageIcon icono = new ImageIcon(getClass().getResource("/Icon/sheet.png"));
@@ -50,18 +50,17 @@ public class resumen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign Up");
 
-        jPanel1.setBackground(new java.awt.Color(46, 139, 87));
+        jPanel1.setBackground(new java.awt.Color(0, 95, 115));
         jPanel1.setToolTipText("");
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        jPanel3.setBackground(new java.awt.Color(75, 75, 75));
+        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
         jPanel3.setAutoscrolls(true);
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("SMARTVAULT");
+        jLabel5.setText("CapeKeeper");
 
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jButton1.setText("Resumen");
@@ -118,7 +117,7 @@ public class resumen extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(166, Short.MAX_VALUE)
+                .addContainerGap(164, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -175,10 +174,9 @@ public class resumen extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(250, 80, 780, 220);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/abarrotesLogo.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/capeKeeperHorizontal.jpg"))); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(250, 300, 800, 200);
+        jLabel3.setBounds(230, 200, 790, 360);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

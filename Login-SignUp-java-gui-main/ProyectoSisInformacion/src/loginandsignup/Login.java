@@ -17,7 +17,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setResizable(false);
-        this.setTitle("SMARTVAULT - INICIAR SESIÓN");
+        this.setTitle("CAPKEEPER - INICIAR SESIÓN");
         cx = new connection();
         cx.conectar();
         
@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -61,8 +61,9 @@ public class Login extends javax.swing.JFrame {
         Left.setBackground(new java.awt.Color(255, 255, 255));
         Left.setMinimumSize(new java.awt.Dimension(400, 500));
 
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Bienvenido!");
 
         jLabel2.setBackground(new java.awt.Color(102, 102, 102));
@@ -109,7 +110,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnIniciarSesion.setBackground(new java.awt.Color(0, 51, 102));
+        btnIniciarSesion.setBackground(new java.awt.Color(0, 95, 115));
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("Iniciar Sesión");
@@ -124,7 +125,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("¿No tienes cuenta? Crea una");
 
-        btnRegistrar.setBackground(new java.awt.Color(0, 51, 102));
+        btnRegistrar.setBackground(new java.awt.Color(0, 95, 115));
         btnRegistrar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrarse");
@@ -138,8 +139,9 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 51, 102));
-        jLabel5.setText("SmartVault");
+        jLabel5.setText("CapeKeeper");
 
+        jLabel6.setBackground(new java.awt.Color(51, 51, 51));
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 51));
         jLabel6.setText("Inicie sesión a continuación");
@@ -206,21 +208,22 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(Left);
         Left.setBounds(0, 0, 400, 571);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/abarrotesLogo.png"))); // NOI18N
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(380, -50, 1400, 670);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logo.png"))); // NOI18N
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(370, -30, 540, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -239,27 +242,30 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-     try {
-         // TODO add your handling code here:
          String usuario= jTextField1.getText();
          String pass = String.valueOf(jPasswordField1.getPassword());
-         String query = "SELECT * FROM usuarios WHERE nombre_usuario='"+usuario+"' and contrasena='"+pass+"'";
-         java.sql.Statement st = cx.conectar().createStatement();
-         ResultSet rs = st.executeQuery(query);
-         if(rs.next()){
-             JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario);
-             resumen interf1Frame = new resumen();
-             interf1Frame.setVisible(true);
-             interf1Frame.pack();
-             interf1Frame.setLocationRelativeTo(null); 
-                this.dispose();
+         
+         if(usuario.isEmpty() || pass.isEmpty()){
+             JOptionPane.showMessageDialog(null, "Uno o mas campos estan incompletos, revisalos");
          }else{
-             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
-         }
-     } catch (SQLException ex) {
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                String query = "SELECT * FROM usuarios WHERE nombre_usuario='"+usuario+"' and contrasena='"+pass+"'";
+                java.sql.Statement st = cx.conectar().createStatement();
+                ResultSet rs = st.executeQuery(query);
+                if(rs.next()){
+                    JOptionPane.showMessageDialog(null, "Bienvenido, "+usuario);
+                    resumen interf1Frame = new resumen();
+                    interf1Frame.setVisible(true);
+                    interf1Frame.pack();
+                    interf1Frame.setLocationRelativeTo(null); 
+                       this.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex); 
+                }
      }
-       
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -313,7 +319,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;

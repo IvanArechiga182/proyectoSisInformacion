@@ -15,7 +15,7 @@ public class productos extends javax.swing.JFrame {
     public productos() {
        initComponents();
        setResizable(false);
-       this.setTitle("SMARTVAULT - PRODUCTOS");
+       this.setTitle("CAPKEEPER - PRODUCTOS");
        CProductos objetoProductos = new CProductos();
        objetoProductos.mostrarProductos(tablaProductos);
        campoIdProducto.setEnabled(false);
@@ -67,17 +67,16 @@ public class productos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign Up");
 
-        jPanel1.setBackground(new java.awt.Color(46, 139, 87));
+        jPanel1.setBackground(new java.awt.Color(0, 95, 115));
         jPanel1.setToolTipText("");
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        jPanel3.setBackground(new java.awt.Color(75, 75, 75));
+        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
         jPanel3.setAutoscrolls(true);
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("SMARTVAULT");
 
         btnResumen.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
